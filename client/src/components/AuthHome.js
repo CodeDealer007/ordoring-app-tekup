@@ -7,6 +7,7 @@ import ResContext from "../context/restaurant/resContext";
 import AuthContext from "../context/auth/authContext";
 import Restaurants from "./Restaurant&Dishes/Restaurants";
 import Orders from "./Orders/Orders";
+import { BackButton } from "./utils/BackButton";
 
 const AuthHome = props => {
   const resContext = useContext(ResContext);

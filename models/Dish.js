@@ -15,6 +15,10 @@ const dishSchema = new mongoose.Schema({
   description: {
     type: String,
     required: [true, "Please provide description about the dish"]
+  },
+  image: {
+    type: String,
+    required: [true, "Please provide image about the dish"]
   }
 });
 

@@ -32,8 +32,14 @@ const OrderItem = ({ order }) => {
             data =>
               data.quantity > 0 && (
                 <li key={data.dish._id} className="collection-item">
-                  {data.dish.name}
-                  <div className="secondary-content"> Qty: {data.quantity}</div>
+                   <div className="secondary-content"> Food:</div>{data.dish.name}
+                  <div className="secondary-content"> Qty:    </div> {data.quantity}
+                  <div className="secondary-content"> Client: </div> {data.name}       
+                  <div className="secondary-content"> Phone:  </div> {data.phoneNumber} 
+                  <div className="secondary-content"> Adress: </div> {data.adress}     
+                  <div className="secondary-content"> Status: </div> {data.status}     
+
+
                 </li>
               )
           )}

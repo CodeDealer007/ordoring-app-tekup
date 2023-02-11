@@ -4,13 +4,14 @@ const Restaurant = require("../models/Restaurant");
 // Create Restaurant
 exports.create = async (req, res, next) => {
   try {
-    const { name, address, cuisine, description, contactNumber } = req.body;
+    const { name, address, cuisine, description,image,contactNumber } = req.body;
     const user = req.user;
     const restaurant = new Restaurant({
       name,
       address,
       cuisine,
       description,
+      image,
       contactNumber,
       user
     });

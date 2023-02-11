@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const DishItem = ({ index, dish, onEdit }) => {
-  const { name, price, type, description } = dish;
+  const { name, price, type, description ,image} = dish;
+
   const onChange = e => {
     onEdit(e, index);
   };
@@ -48,6 +49,17 @@ const DishItem = ({ index, dish, onEdit }) => {
           onChange={onChange}
         ></textarea>
         <label htmlFor="price">Description</label>
+      </div>
+      <div className="input-field col s12 m3">
+        <input
+          name="image"
+          id="image"
+          type="file"
+          accept="image/*"
+          value={image}
+          onChange={onChange}
+        />
+        {/* <label htmlFor="name">image</label> */}
       </div>
     </div>
   );

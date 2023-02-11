@@ -18,6 +18,10 @@ const SideNav = () => {
 
   return (
     <ul id="slide-out" className="sidenav sidenav-close">
+      <li><center>Welcome to your food APP</center></li>
+      <li>
+          <div className="divider"></div>
+        </li>
       <li>
         <Link to="/res/all">All Restaurants</Link>
       </li>
@@ -35,6 +39,32 @@ const SideNav = () => {
             : "Restaurants"}
         </Link>
       </li>
+      {authContext.user && authContext.user.role === "user" &&
+        <li>
+          <div className="divider"></div>
+        </li>
+      }
+      {authContext.user && authContext.user.role === "user" &&
+        < li >
+          <Link to="/recep">
+            Recipes ideas
+          </Link>
+        </li>
+      }
+      {authContext.user && authContext.user.role === "user" &&
+        < li >
+          <Link to="/topRest">
+            Top Restaurants of the months
+          </Link>
+        </li>
+      }
+      {authContext.user && authContext.user.role === "user" &&
+        < li >
+          <Link to="/about">
+            About us
+          </Link>
+        </li>
+      }
       <li>
         <div className="divider"></div>
       </li>

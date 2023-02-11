@@ -18,6 +18,9 @@ import NotFound from "./components/NotFound";
 import AuthContext from "./context/auth/authContext";
 import SideNav from "./components/layout/SideNav";
 import OrdersManager from "./components/Orders/OrdersManager";
+import about from "./components/OtherPages/about";
+import topRest from "./components/OtherPages/topRest";
+import recep from "./components/OtherPages/recep";
 
 if (localStorage.getItem("token")) {
   setAuthToken(localStorage.token);
@@ -25,8 +28,9 @@ if (localStorage.getItem("token")) {
 
 function App() {
   const { isAuthenticated } = useContext(AuthContext);
+
   return (
-    <div className="App">
+    <div  className="App">
       <AlertState>
         <ResState>
           <Router>
@@ -49,7 +53,22 @@ function App() {
                   path="/res/all"
                   component={AllRestaurants}
                 />
-                  <PrivateRoute
+                <PrivateRoute
+                  exact
+                  path="/about"
+                  component={about}
+                />
+                <PrivateRoute
+                  exact
+                  path="/topRest"
+                  component={topRest}
+                />
+                <PrivateRoute
+                  exact
+                  path="/recep"
+                  component={recep}
+                />
+                <PrivateRoute
                   exact
                   path="/OrdersManager"
                   component={OrdersManager}

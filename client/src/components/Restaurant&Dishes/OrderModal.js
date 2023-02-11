@@ -21,8 +21,8 @@ const OrderModal = props => {
 
     order.data.forEach(data => {
       if (data.quantity > 0) {
-        const { dish, quantity } = data;
-        orderData.dishData.push({ dish, quantity });
+        const { dish, quantity, adress, name, phoneNumber, status } = data;
+        orderData.dishData.push({ dish, quantity , adress, name, phoneNumber, status });
       }
     });
 
@@ -45,6 +45,10 @@ const OrderModal = props => {
                 <li key={data.dish} className="collection-item">
                   {data.name}
                   <div className="secondary-content"> Qty: {data.quantity}</div>
+                  <div className="secondary-content"> name: {data.name}</div>
+                  <div className="secondary-content"> phone-Number: {data.phoneNumber}</div>
+                  <div className="secondary-content"> adress: {data.adress}</div>
+                  <div className="secondary-content"> status: {data.status}</div>
                 </li>
               )
           )}

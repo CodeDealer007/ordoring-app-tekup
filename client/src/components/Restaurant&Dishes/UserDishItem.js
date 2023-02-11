@@ -39,6 +39,53 @@ const UserDishItem = ({ index, dish, onEdit }) => {
             Enter Quantity
           </label>
         </div>
+        <div className="input-field">
+          <input
+            className="white-text"
+            name="name"
+            id="name"
+            type="text"
+            onChange={onChange}
+          />
+          <label htmlFor="name" className="white-text active">
+            Enter Your Name
+          </label>
+        </div><div className="input-field">
+          <input
+            className="white-text"
+            name="adress"
+            id="adress"
+            type="text"
+            onChange={onChange}
+          />
+          <label htmlFor="adress" className="white-text active">
+            Enter Your Adress
+          </label>
+        </div><div className="input-field">
+          <input
+            className="white-text"
+            name="phoneNumber"
+            id="phoneNumber"
+            type="number"
+            onChange={onChange}
+          />
+          <label htmlFor="phoneNumber" className="white-text active">
+            Enter Phone Number
+          </label>
+        </div><div className="input-field">
+          <input
+            className="white-text"
+            name="status"
+            id="status"
+            type="text"
+            readOnly
+            defaultValue="In Creation"
+            // value={data.status}
+          />
+          <label htmlFor="status" className="white-text active">
+            Status 
+          </label>
+        </div>
       </div>
       <div className="card-reveal grey lighten-4">
         <span className="card-title" style={{ fontWeight: 500 }}>

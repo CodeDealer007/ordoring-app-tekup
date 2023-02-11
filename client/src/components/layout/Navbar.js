@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 import ResContext from "../../context/restaurant/resContext";
+import { BackButton } from "../utils/BackButton";
 
 const Navbar = () => {
   const authContext = useContext(AuthContext);
@@ -29,12 +30,13 @@ const Navbar = () => {
 
   const userLinks = (
     <>
+      <h1> Menu :</h1>
       <li>
         <Link to="/res/all">All Restaurants</Link>
       </li>
       <li>
         <Link to="/OrdersManager">
-            My Restaurant Orders</Link>
+          My Restaurant Orders</Link>
       </li>
       <li>
         <Link to="/home">
@@ -44,6 +46,27 @@ const Navbar = () => {
             : "Restaurants"}
         </Link>
       </li>
+      {authContext.user && authContext.user.role === "user" &&
+        < li >
+          <Link to="/recep">
+            Recipes ideas
+          </Link>
+        </li>
+      }
+      {authContext.user && authContext.user.role === "user" &&
+        < li >
+          <Link to="/topRest">
+            Top Restaurants of the months
+          </Link>
+        </li>
+      }
+      {authContext.user && authContext.user.role === "user" &&
+        < li >
+          <Link to="/about">
+            About us 
+          </Link>
+        </li>
+      }
       <li>
         <a href="/" onClick={onLogout}>
           Logout
@@ -62,6 +85,7 @@ const Navbar = () => {
             </a>
           )}
           <Link to="/" className="brand-logo">
+            <img className="image" src="https://www.pngkey.com/png/full/135-1350735_cooking-icon-food-icon-fish-icon-food-icon.png" />
             My Food
           </Link>
           <ul id="nav-mobile" className="right hide-on-med-and-down">

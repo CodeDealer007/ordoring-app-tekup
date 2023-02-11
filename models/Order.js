@@ -23,7 +23,24 @@ const orderSchema = new mongoose.Schema({
         quantity: {
           type: Number,
           required: [true, "Please enter the quantity of the dish"]
+        },
+        name: {
+          type: String,
+          required: [true, "Please enter your name"]
+        },
+        phoneNumber: {
+          type: Number,
+          required: [true, "Please enter your phone number"]
+        },
+        adress: {
+          type: String,
+          required: [true, "Please enter your adress"]
+        },
+        status : {
+          type: Boolean,
+          required: [false, "in progress"]
         }
+
       },
       { _id: false }
     )

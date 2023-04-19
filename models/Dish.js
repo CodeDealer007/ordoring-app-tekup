@@ -16,10 +16,10 @@ const dishSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide description about the dish"]
   },
-  image: {
+  imageDish: {
     type: String,
-    required: [true, "Please provide image about the dish"]
-  }
+    required: [false, "Please enter your image"]
+  },
 });
 
 const Dish = mongoose.model("Dish", dishSchema);

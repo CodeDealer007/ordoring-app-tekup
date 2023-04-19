@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import ResContext from "../../context/restaurant/resContext";
 
-const CreateResModal = ({ addResData }) => {
+const CreateResModal = ({ addResData,image,setImage }) => {
   const resContext = useContext(ResContext);
   const { restaurant, clearRestaurant, updateRestaurant } = resContext;
 
@@ -10,7 +10,8 @@ const CreateResModal = ({ addResData }) => {
     cuisine: "Multi-Cuisine",
     address: "",
     description: "",
-    contactNumber: ""
+    contactNumber: "",
+    imageName: "",
   });
 
   const { name, cuisine, address, description, contactNumber } = res;
@@ -56,6 +57,13 @@ const CreateResModal = ({ addResData }) => {
     clearRestaurant();
   };
 
+  const handlageImage = (event) => {
+    let file = event.target.value
+    let img = file.split("\\").pop()
+    // if (img) setImage(img)
+    if (img) setRes({ ...res, [event.target.name]: img });
+  };
+ 
   const onResModal = e => {
     addResData({ res });
     console.log("from res");
@@ -146,6 +154,18 @@ const CreateResModal = ({ addResData }) => {
                   onChange={onChange}
                 />
                 <label htmlFor="contactNumber">Contact Number</label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field col s12 m9 offset-m1">
+                <i className="material-icons prefix">image</i>
+                <input
+                  id="image"
+                  name="imageName"
+                  type="file"
+                  onChange={handlageImage}
+                />
+                <label htmlFor="contactNumber">Upload Image</label>
               </div>
             </div>
           </form>

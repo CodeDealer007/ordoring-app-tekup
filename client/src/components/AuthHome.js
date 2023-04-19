@@ -14,6 +14,7 @@ const AuthHome = props => {
   const authContext = useContext(AuthContext);
   const { user, loadUser, isAuthenticated } = authContext;
   const { createRes, getMyRes, clearRestaurant } = resContext;
+  const [image,setImage] = useState()
 
   useEffect(() => {
     const M = window.M;
@@ -36,7 +37,7 @@ const AuthHome = props => {
       submitResData();
     }
   });
-
+  console.log("image",image);
   const [resData, setResData] = useState({});
 
   const addResData = data => {
@@ -67,7 +68,8 @@ const AuthHome = props => {
 
   const forRestaurant = (
     <>
-      <Restaurants />
+      <div><h3><center>My Restaurants</center></h3></div>
+      <Restaurants image={image}/>
       <div className="fixed-action-btn">
         <label htmlFor="add">Add Restaurant</label>
         <a
@@ -81,7 +83,7 @@ const AuthHome = props => {
           <i className="large material-icons">add</i>
         </a>
       </div>
-      <CreateRes addResData={addResData} />
+      <CreateRes image={image} setImage={setImage} addResData={addResData} />
       <Dishes addResData={addResData} />
     </>
   );

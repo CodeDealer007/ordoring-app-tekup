@@ -6,9 +6,10 @@ const UserDishItem = ({ index, dish, onEdit }) => {
     onEdit(e, index);
   };
 
-  const { name, price, type, description } = dish;
+  const { name, price, type, description,imageDish } = dish;
   return (
     <div className="card cyan darken-4">
+      <img src={"/" + imageDish} alt="" style={{ width: "100%" }} />
       <div className="card-content white-text">
         <span className="card-title">{name}</span>
         <blockquote style={{ fontSize: "1.2rem" }}>
@@ -80,10 +81,10 @@ const UserDishItem = ({ index, dish, onEdit }) => {
             type="text"
             readOnly
             defaultValue="In Creation"
-            // value={data.status}
+          // value={data.status}
           />
           <label htmlFor="status" className="white-text active">
-            Status 
+            Status
           </label>
         </div>
       </div>

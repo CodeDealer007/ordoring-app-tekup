@@ -5,6 +5,44 @@
   background-color: #cfe3cf;
 }
 
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+
+.main-wrapper {
+  height: 60vh;
+  margin: 10px 50px;
+  filter: drop-shadow(-1px 5px 3px rgba(204, 204, 204, 0.962));
+}
+.sidenav{
+  background-color: #e6f9e4;
+}
+.info-wrapper {
+  margin-top: 15px;
+  position: relative;
+  margin-top: 90%;
+  background-color: rgba(206, 209, 233, 0.277);
+}
+.map-details {
+  text-align: center;
+  font-size: 1.2em;
+}
+.map-details span {
+  font-weight: bold;
+}
+.search-input {
+  font-size: 1.2em;
+  width: 80%;
+}
+
+[type="radio"]:not(:checked) {
+  position: inherit;
+  opacity: 1;
+}
+
 .spinner {
   width: 10rem;
   display: block;
@@ -95,6 +133,7 @@ label[for="add"] {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
   position: relative;
+  background: url("./showcase.jpg") center center/cover;
 }
 
 #showcase::before {
@@ -126,6 +165,7 @@ label[for="add"] {
 .nav-wrapper {
   margin-bottom: 5%;
 }
+
 #showcase .card .btn:hover {
   background-color: #fff !important;
   color: #00695c;
@@ -161,11 +201,12 @@ footer {
   .card .card-content p {
     margin-top: 5px;
   }
+
   .submitBtn {
     width: 100%;
   }
 
-  .image{
+  .image {
     margin-top: 2%;
     width: 25%;
     height: 25%;
@@ -173,26 +214,30 @@ footer {
     margin-right: 5%;
   }
 
- /* back button */
+  /* back button */
 
- .back-button {
-  background-color: #6ef1a9;
-  color: black;
-}
+  .back-button {
+    background-color: #6ef1a9;
+    color: black;
+  }
 
   .section-grid-2 {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+
   .section-grid-1 {
     grid-template-columns: 1fr !important;
   }
+
   #order-item .card-content {
     padding-bottom: 10px;
     min-height: 145px !important;
   }
+
   #order-item .card-reveal .card-title {
     font-size: 17px;
   }
+
   #order-item .card-reveal .secondary-content {
     float: none;
   }
@@ -251,7 +296,7 @@ html {
 
 @media screen and (max-width: 650px) {
   .column {
-      width: 100%;
-      display: block;
+    width: 100%;
+    display: block;
   }
 }

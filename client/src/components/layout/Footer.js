@@ -9,8 +9,7 @@ const Footer = () => {
         </div>
         <div className="right">
           <h6>
-            Made by : Doghri Meher | Mahdi Ghozzi | Ibtihel Zemni
-      
+            Made by : Doghri Meher | Mahdi Ghozzi | Ibtihel Zemni | Ameni Charada
           </h6>
         </div>
       </div>

@@ -9,7 +9,7 @@ const Dishes = ({ addResData }) => {
       price: "",
       type: "",
       description: "",
-      image: ""
+      imageDish: ""
     }
   ]);
 
@@ -21,14 +21,14 @@ const Dishes = ({ addResData }) => {
         price: "",
         type: "",
         description: "",
-        image:""
+        imageDish:""
       }
     ]);
   };
 
   useEffect(() => {
     dishes.forEach(dish => {
-      const { name, price, type, description,image } = dish;
+      const { name, price, type, description,imageDish } = dish;
       if (name !== "" && type !== "" && price !== "" && description !== "" ) {
         document.querySelector("a[href='#done']").classList.remove("disabled");
       } else {
@@ -38,11 +38,14 @@ const Dishes = ({ addResData }) => {
   });
 
   const onEdit = (e, index) => {
+    console.log(e,"***e");
+    console.log(index,"***index");
     const _dishes = [...dishes];
+    console.log(_dishes,"***_dishes");
     console.log(_dishes[index],"_dishes[index]");
     setDishes([
       ..._dishes.slice(0, index),
-      { ..._dishes[index], [e.target.name]: e.target.value },
+      { ..._dishes[index], [e.target.name]: e.target.name === "imageDish" ? e.target.value.split("\\").pop() : e.target.value },
       ..._dishes.slice(index + 1)
     ]);
   };
@@ -57,7 +60,8 @@ const Dishes = ({ addResData }) => {
         price: "",
         type: "",
         description: "",
-        image: ""
+        imageName: "",
+        imageDish: ""
       }
     ]);
   };

@@ -1,21 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const DishItem = ({ index, dish, onEdit }) => {
-  const { name, price, type, description ,image} = dish;
-
+  const [dishes, setDishes] = useState([
+    {
+      name: "",
+      price: "",
+      type: "",
+      description: "",
+      imageDish: ""
+    }
+  ]);
+  const { name, price, type, description, imageDish } = dish;
   const onChange = e => {
     onEdit(e, index);
   };
+  const handlageImage = (event) => {
+    let file = event.target.value
+    let img = file.split("\\").pop()
+    const _dishes = [...dishes];
+    console.log(_dishes[index], "_dishes[index]");
+    if (img) setDishes([
+      ..._dishes.slice(0, index),
+      { ..._dishes[index], [event.target.name]: img },
+      ..._dishes.slice(index + 1)
+    ]);
 
+  };
   return (
     <div className="row">
       <div className="input-field col s12 m3">
         <input
           name="name"
           id="name"
-          type="text"
           value={name}
+          type="text"
           onChange={onChange}
         />
         <label htmlFor="name">Name</label>
@@ -52,14 +71,12 @@ const DishItem = ({ index, dish, onEdit }) => {
       </div>
       <div className="input-field col s12 m3">
         <input
-          name="image"
-          id="image"
+          name="imageDish"
+          id="imageDish"
           type="file"
-          accept="image/*"
-          value={image}
           onChange={onChange}
-        />
-        {/* <label htmlFor="name">image</label> */}
+          />
+        <label htmlFor="price">Upload Dish Image</label>
       </div>
     </div>
   );

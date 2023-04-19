@@ -7,9 +7,9 @@ import resContext from "../../context/restaurant/resContext";
 
 const OrdersManager = () => {
 
-  const {restaurants} = useContext(resContext)
+  const { restaurants } = useContext(resContext)
   const [orders, setOrders] = useState([]);
-  console.log("restaurants",restaurants);
+  console.log("restaurants", restaurants);
   const getAllOrders = async () => {
     try {
       const res = await axios.get("/api/order")
@@ -30,10 +30,13 @@ const OrdersManager = () => {
     return <h4>Please place order/(s)</h4>;
   } else {
     return (
-      <div className="section-grid-2" style={OrderStyle}>
-        {orders &&
-          orders.length > 0 &&
-          orders.map(order => <OrderItem key={order._id} order={order} />)}
+      <div>
+        <div><h3><center>Your Orders</center></h3></div>
+        <div className="section-grid-2" style={OrderStyle}>
+          {orders &&
+            orders.length > 0 &&
+            orders.map(order => <OrderItem key={order._id} order={order} />)}
+        </div>
       </div>
     );
   }

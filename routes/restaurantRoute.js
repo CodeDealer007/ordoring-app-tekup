@@ -27,10 +27,10 @@ router.patch(
   restaurantController.updateRestaurant
 );
 
-// router.delete(
-//   "/:id",
-//   authController.roles(["admin"]),
-//   restaurantController.deleteRestaurant
-// );
+router.delete(
+  "/:id",
+  authController.roles(["admin","restaurant"]),
+  restaurantController.deleteRestaurant
+);
 
 module.exports = router;

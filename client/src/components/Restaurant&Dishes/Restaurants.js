@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import RestaurantItem from "./RestaurantItem";
 import Spinner from "../layout/Spinner";
 
 import ResContext from "../../context/restaurant/resContext";
 
-const Restaurants = () => {
+const Restaurants = (image) => {
   const resContext = useContext(ResContext);
   const { restaurants, loading } = resContext;
-
   if (loading) {
     return <Spinner />;
   } else if (restaurants !== null && restaurants.length === 0 && !loading) {
@@ -18,7 +17,9 @@ const Restaurants = () => {
         {restaurants &&
           restaurants.length > 0 &&
           restaurants.map(restaurant => (
-            <RestaurantItem key={restaurant._id} restaurant={restaurant} />
+            <div>
+              <RestaurantItem image={image} key={restaurant._id} restaurant={restaurant} />
+            </div>
           ))}
       </div>
     );

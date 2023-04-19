@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import ResContext from "../../context/restaurant/resContext";
 import { BackButton } from "../utils/BackButton";
 
-const RestaurantItem = ({ restaurant }) => {
+const RestaurantItem = ({ restaurant, image }) => {
   const {
     _id,
     name,
     address,
     contactNumber,
     description,
-    cuisine
+    cuisine,
+    imageName
   } = restaurant;
 
   const resContext = useContext(ResContext);
@@ -20,9 +21,14 @@ const RestaurantItem = ({ restaurant }) => {
   const onEdit = () => {
     setRestaurant(restaurant);
   };
+  // const onDelete = () =>{
+  //   setRestaurant();
 
+  // };
+  console.log("imageName",imageName);
   return (
     <div id="my-restaurant" className="card cyan darken-4">
+      <img src={"/" + imageName } alt="" style={{ width: "100%" }} />
       <div className="card-content white-text">
         <div className="flow-text center">{name}</div>
         <blockquote>
@@ -52,8 +58,17 @@ const RestaurantItem = ({ restaurant }) => {
             onClick={onEdit}
           >
             Edit
-            <i className="large material-icons right">mode_edit</i>
+            {/* <i className="large material-icons right">mode_edit</i> */}
           </a>
+          {/* <a
+            id="delete"
+            className="btn-flat modal-trigger"
+            href="#restaurant"
+            style={{ background: "#00565a" }}
+            onClick={onDelete}
+          >
+            delete
+          </a> */}
         </div>
       </div>
       <div className="card-reveal grey lighten-4">

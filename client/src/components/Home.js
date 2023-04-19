@@ -13,14 +13,15 @@ const Home = props => {
 
   return (
     <div id="showcase" style={{ margin: "0 -1rem" }}>
+
       <div className="card-container valign-wrapper white-text center">
         <div className="card transparent">
-          <div className="card-content center">
-            <h2 className="">
-              My <span className="amber-text text-lighten-4">Food</span>
+          <div style={{background:"#cee9e62e"}} className="card-content center">
+            <h2 style={{color:"#00695c"}} className="">
+              My Food<span className="amber-text text-lighten-4"></span>
             </h2>
-            <p className="flow-text cyan-text">Join us to feed your hunger.</p>
-            <p className="lead">
+            <h5  style={{color:"#00695c"}} >Join us to feed your hunger.</h5>
+            <p style={{color:"black"}} className="lead">
               Order now and get tasty restaurant like food at your home.
             </p>
           </div>

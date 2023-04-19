@@ -10,7 +10,13 @@ const AllRestaurants = () => {
     resContext.getAllRes();
   }, []);
 
-  return <Restaurants />;
+  return (
+    <div>
+      <div><h3><center>List Of Restraunts</center></h3></div>
+      <Restaurants />;
+    </div>
+  )
+
 };
 
 export default AllRestaurants;

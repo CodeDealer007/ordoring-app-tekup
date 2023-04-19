@@ -18,10 +18,10 @@ const SideNav = () => {
 
   return (
     <ul id="slide-out" className="sidenav sidenav-close">
-      <li><center>Welcome to your food APP</center></li>
+      <li style={{backgroundColor:"#a4e89c"}}><center>Welcome to your food APP</center></li>
       <li>
-          <div className="divider"></div>
-        </li>
+        <div className="divider"></div>
+      </li>
       <li>
         <Link to="/res/all">All Restaurants</Link>
       </li>
@@ -65,6 +65,14 @@ const SideNav = () => {
           </Link>
         </li>
       }
+      <li>
+        <div className="divider"></div>
+      </li>
+      <li>
+        <Link to="/delivery">
+          Delivery
+        </Link>
+      </li>
       <li>
         <div className="divider"></div>
       </li>

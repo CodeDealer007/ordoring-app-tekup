@@ -21,6 +21,7 @@ import OrdersManager from "./components/Orders/OrdersManager";
 import about from "./components/OtherPages/about";
 import topRest from "./components/OtherPages/topRest";
 import recep from "./components/OtherPages/recep";
+import Delivery from "./components/OtherPages/Delivery";
 
 if (localStorage.getItem("token")) {
   setAuthToken(localStorage.token);
@@ -72,6 +73,11 @@ function App() {
                   exact
                   path="/OrdersManager"
                   component={OrdersManager}
+                />
+                <PrivateRoute
+                  exact
+                  path="/delivery"
+                  component={Delivery}
                 />
                 <PrivateRoute exact path="/res/:id" component={DishCards} />
                 {isAuthenticated !== null && (

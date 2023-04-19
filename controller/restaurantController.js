@@ -4,14 +4,14 @@ const Restaurant = require("../models/Restaurant");
 // Create Restaurant
 exports.create = async (req, res, next) => {
   try {
-    const { name, address, cuisine, description,image,contactNumber } = req.body;
+    const { name, address, cuisine, description,imageName,contactNumber } = req.body;
     const user = req.user;
     const restaurant = new Restaurant({
       name,
       address,
       cuisine,
       description,
-      image,
+      imageName,
       contactNumber,
       user
     });
@@ -68,6 +68,17 @@ exports.updateRestaurant = async (req, res) => {
   }
 };
 
+exports.deleteRestaurant = async (req,res) => {
+  try {
+    const restaurant = await Restaurant.findByIdAndDelete(
+      req.params.id,
+    );
+    res.status(201).json({ status: "success", data: { restaurant } });
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json({ status: "error", msg: err.message });
+  }
+}
 // Get Restaurant by user
 exports.getMyRes = async (req, res) => {
   try {

@@ -16,15 +16,15 @@ const app = express();
 //const DB = process.env.DB.replace("db:db", DB_PASSWORD);
 
 mongoose
-  .connect("mongodb+srv://db:db@cluster0.l0u41hr.mongodb.net/test" ,{
+  .connect("mongodb+srv://db:db@cluster0.l0u41hr.mongodb.net/test", {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   })
   .then(() => console.log("Connected to DB"));
-  
-  app.listen(8180);
+
+app.listen(8180);
 app.use(express.json());
 
 if (process.env.NODE_ENV === "development") {
@@ -40,8 +40,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
   // app.get("*", (req, res) => {
-   // res.sendFile(path.resolve(__dirname,"client/public/index.html"));
-//  });
+  // res.sendFile(path.resolve(__dirname,"client/public/index.html"));
+  //  });
 }
 
 const port = process.env.PORT || 5000;
